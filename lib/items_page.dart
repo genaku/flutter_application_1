@@ -10,7 +10,7 @@ class ItemsPage extends StatelessWidget {
   @override
   Widget build(BuildContext context) {
     return Scaffold(
-      appBar: AppBar(title: const Text('Stack Example')),
+      appBar: AppBar(title: const Text('Study Example')),
       body: BlocBuilder<ItemsCubit, ItemsState>(
         builder: (context, state) {
           // MyStackWidget(),
