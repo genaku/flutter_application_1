@@ -10,12 +10,12 @@ import 'package:flutter_bloc/flutter_bloc.dart';
 class MyPage extends StatelessWidget {
   MyPage({super.key});
 
-  final ItemRepository itemRepository = ItemRepositoryImpl();
+  final ItemRepository _itemRepository = ItemRepositoryImpl();
 
   @override
   Widget build(BuildContext context) {
     return BlocProvider(
-      create: (context) => ItemsCubit(itemRepository)..loadItems(),
+      create: (context) => ItemsCubit(_itemRepository)..loadItems(),
       child: const ItemsPage(),
     );
   }
