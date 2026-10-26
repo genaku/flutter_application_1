@@ -1,7 +1,7 @@
 import 'package:flutter/material.dart';
 import 'package:flutter_application_1/row_item_widget.dart';
-import 'package:flutter_application_1/subject_cubit.dart';
-import 'package:flutter_application_1/subject_state.dart';
+import 'package:flutter_application_1/items_cubit.dart';
+import 'package:flutter_application_1/items_state.dart';
 import 'package:flutter_bloc/flutter_bloc.dart';
 
 class ItemsPage extends StatelessWidget {
@@ -11,13 +11,13 @@ class ItemsPage extends StatelessWidget {
   Widget build(BuildContext context) {
     return Scaffold(
       appBar: AppBar(title: const Text('Stack Example')),
-      body: BlocBuilder<SubjectCubit, SubjectState>(
+      body: BlocBuilder<ItemsCubit, ItemsState>(
         builder: (context, state) {
           // MyStackWidget(),
           switch (state) {
-            case SubjectLoading():
+            case ItemsLoading():
               return const Center(child: CircularProgressIndicator());
-            case SubjectLoaded():
+            case ItemsLoaded():
               return ListView.builder(
                 shrinkWrap: true,
                 itemCount: state.items.length,
@@ -25,7 +25,7 @@ class ItemsPage extends StatelessWidget {
                   return RowItemWidget(data: state.items[index]);
                 },
               );
-            case SubjectError():
+            case ItemsError():
               return const Center(child: Text('Failed to load items'));
           }
         },

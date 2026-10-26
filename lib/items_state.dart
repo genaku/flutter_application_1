@@ -2,24 +2,24 @@ import 'package:equatable/equatable.dart';
 
 import 'item_data.dart';
 
-sealed class SubjectState extends Equatable {}
+sealed class ItemsState extends Equatable {}
 
-final class SubjectLoading extends SubjectState {
+final class ItemsLoading extends ItemsState {
   @override
   List<Object?> get props => [];
 }
 
-final class SubjectLoaded extends SubjectState {
+final class ItemsLoaded extends ItemsState {
   final List<ItemData> items;
-  SubjectLoaded(this.items);
+  ItemsLoaded(this.items);
 
   @override
   List<Object?> get props => [items];
 }
 
-final class SubjectError extends SubjectState {
+final class ItemsError extends ItemsState {
   final String message;
-  SubjectError(this.message);
+  ItemsError(this.message);
   @override
   List<Object?> get props => [message];
 }

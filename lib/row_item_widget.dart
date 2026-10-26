@@ -18,7 +18,6 @@ class RowItemWidget extends StatelessWidget {
             padding: const EdgeInsets.all(8.0),
             child: const Icon(Icons.star),
           ),
-          const SizedBox(width: 8),
           Expanded(
             child: Column(
               crossAxisAlignment: CrossAxisAlignment.start,
